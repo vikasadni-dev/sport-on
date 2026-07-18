@@ -1,22 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy-dark: #020817;
+  --davy-alternative: #0a192f;
+  --primary-blue: #0066cc;
+  --blue-tint: #f0f8ff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy-dark: var(--navy-dark);
+  --color-davy-alternative: var(--davy-alternative);
+  --color-primary-blue: var(--primary-blue);
+  --color-blue-tint: var(--blue-tint);
+  --font-poppins: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/*selector untuk memaksa semua halaman menggunakan font poppins (by tailwind) */
+* {
+  @apply font-poppins;
 }
-
-
