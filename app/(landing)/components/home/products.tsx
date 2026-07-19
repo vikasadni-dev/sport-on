@@ -2,72 +2,73 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/button";
 import { FiPlus } from "react-icons/fi";
+import priceFormatter from "@/app/utils/price-formatter";
 
 const productList = [
   {
     name: "SportsOn Product 1",
     category: "Shoes",
     price: 450000,
-    imgUrl: "football-shoes (1) 1.png",
+    imgUrl: "product (1).png",
   },
   {
     name: "SportsOn Product 2",
-    category: "Tennis",
+    category: "Shoes",
     price: 250000,
-    imgUrl: "tennis-racket 1-1.png",
+    imgUrl: "product (2).png",
   },
   {
     name: "SportsOn Product 3",
     category: "TShirt",
     price: 230000,
-    imgUrl: "sportshirt 1-1.png",
+    imgUrl: "product (3).png",
   },
   {
     name: "SportsOn Product 4",
-    category: "Shoes",
+    category: "TShirt",
     price: 440000,
-    imgUrl: "shoes 2.png",
+    imgUrl: "product (4).png",
   },
   {
     name: "SportsOn Product 5",
-    category: "Shoes",
+    category: "Tennis",
     price: 550000,
-    imgUrl: "shoes 2-1.png",
+    imgUrl: "product (5).png",
   },
   {
     name: "SportsOn Product 6",
     category: "Tennis",
     price: 650000,
-    imgUrl: "tennis-racket 1.png",
+    imgUrl: "product (6).png",
   },
     {
     name: "SportsOn Product 3",
-    category: "TShirt",
+    category: "Shoes",
     price: 230000,
-    imgUrl: "sportshirt 1.png",
+    imgUrl: "product (7).png",
   },
       {
     name: "SportsOn Product 3",
     category: "Set Tennis",
-    price: 230000,
-    imgUrl: "set.png",
+    price: 700000,
+    imgUrl: "product (8).png",
   },
 ];
 
 const ProductsSection = () => {
   return (
-    <section id="products-section" className="container mx-auto mt-32">
+    <section id="products-section" className="container mx-auto mt-32 mb-52">
       <h2 className="font-bold italic text-4xl text-center mb-11">
-        <span className="text-primary-blue">OUR </span>PRODUCTS
+        <span className="text-primary">OUR </span>PRODUCTS
       </h2>
       <div className="grid grid-cols-4 gap-5">
         {productList.map((product, index) => (
           <Link
-            href="#"
+            href={`/product/${product.name}`}
             key={index}
             className="p-1.5 bg-white hover:drop-shadow-xl duration-300"
           >
-            <div className="bg-blue-tint aspect-square w-full flex justify-center items-center relative">
+            <div className="bg-primary-light aspect-square w-full flex justify-center items-center relative">
               <Image
                 src={`/images/products/${product.imgUrl}`}
                 alt={product.name}
@@ -75,19 +76,15 @@ const ProductsSection = () => {
                 height={300}
                 className="aspect-square object-contain"
               />
-              <Button className="w-10 h-10 p-2! absolute right-3 top-3 ">
+              <Button className="w-10 h-10 p-2! absolute top-3 right-3 ">
                 <FiPlus size={24} />
               </Button>
             </div>
             <h3 className="font-medium text-lg mb-1.5 mt-4">{product.name}</h3>
             <div className="flex justify-between mb-8">
               <div className="text-gray-500">{product.category}</div>
-              <div className="font-medium text-primary-blue">
-                {Intl.NumberFormat("id-ID", {
-                  style: "currency",
-                  currency: "IDR",
-                  maximumSignificantDigits: 3,
-                }).format(product.price)}
+              <div className="font-medium text-primary">
+                {priceFormatter(product.price)}
               </div>
             </div>
           </Link>
