@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} antialiased`}>
         <div className="flex min-h-screen bg-white">
-          <Sidebar />
+          <Sidebar/>
           <main className="flex-1 ml-80 p-14 bg-[#F7F9FA] min-h-screen">
             <div className="max-w-6xl mx-auto">{children}</div>
           </main>
