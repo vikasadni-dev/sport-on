@@ -5,12 +5,12 @@ import { FiEdit2, FiTrash2 } from "react-icons/fi";
 const categoryData = [
   {
     name: "Running",
-    imageUrl: "/images/categories/category-running.png",
+    imageUrl: "/images/categories/category-running.svg",
     description: "lorem ipsum ",
   },
   {
     name: "Football",
-    imageUrl: "/images/categories/category-football.png",
+    imageUrl: "/images/categories/category-football.svg",
     description: "lorem ipsum ",
   },
 ];
